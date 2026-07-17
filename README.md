@@ -19,10 +19,21 @@
 
 ## Архитектура пайплайна
 Входной текст обрабатывается по данной цепочке операций:
-$$
-\text{Text} \xrightarrow{\text{Encode}} \text{Tokens} \xrightarrow{\text{+Pos}} \text{Embeddings} \xrightarrow{\text{Transformer Stack}} \text{Logits} \xrightarrow{\text{Softmax}} \text{Probs} \xrightarrow{\text{Argmax}} \text{Next Char}
-$$
-
+```mermaid
+graph LR
+    A[Text] --> B(Encode)
+    B --> C(Tokens)
+    C --> D(+Pos Embeddings)
+    D --> E(Transformer Stack)
+    E --> F(Logits)
+    F --> G(Softmax)
+    G --> H(Probs)
+    H --> I(Argmax)
+    I --> J[Next Char]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style J fill:#bbf,stroke:#333,stroke-width:2px
+```
 ## Быстрый старт
 
 Запуск:
