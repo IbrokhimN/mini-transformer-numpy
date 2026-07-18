@@ -1,5 +1,5 @@
 import numpy as np
-from config import Config
+from mini_transformer.config import Config
 
 d_model = Config.d_model
 
